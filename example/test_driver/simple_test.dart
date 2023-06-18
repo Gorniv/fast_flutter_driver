@@ -18,6 +18,8 @@ void main(List<String> args) {
     driver = await FlutterDriver.connect(
       dartVmServiceUrl: properties.vmUrl,
     );
+    print('additionalArgs: ${properties.additionalArgs}');
+    print('vmUrl: ${properties.vmUrl}');
   });
 
   tearDownAll(() async {

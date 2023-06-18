@@ -17,7 +17,7 @@ class BasePage extends StatelessWidget {
       body: Center(
         child: Text(
           title,
-          style: Theme.of(context).textTheme.bodyText1,
+          style: Theme.of(context).textTheme.bodyLarge,
         ),
       ),
     );

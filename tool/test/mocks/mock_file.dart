@@ -21,10 +21,11 @@ class NonMockitoFile implements File {
   late File createMock;
 
   @override
-  Future<File> create({bool recursive = false}) async => copyMock;
+  Future<File> create({bool exclusive = false, bool recursive = false}) async =>
+      copyMock;
 
   @override
-  void createSync({bool recursive = false}) {}
+  void createSync({bool exclusive = false, bool recursive = false}) {}
 
   late FileSystemEntity deleteMock;
 

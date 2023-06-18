@@ -21,8 +21,8 @@ void main() {
       linuxOverride = false;
       final tested = WindowUtils(
         macOs: () => systemWindow,
-        win32: () => _MockSystemWindow(),
-        other: () => _MockSystemWindow(),
+        win32: _MockSystemWindow.new,
+        other: _MockSystemWindow.new,
       );
 
       await tested.setSize(size);
@@ -35,9 +35,9 @@ void main() {
       windowsOverride = true;
       linuxOverride = false;
       final tested = WindowUtils(
-        macOs: () => _MockSystemWindow(),
+        macOs: _MockSystemWindow.new,
         win32: () => systemWindow,
-        other: () => _MockSystemWindow(),
+        other: _MockSystemWindow.new,
       );
 
       await tested.setSize(size);
@@ -50,8 +50,8 @@ void main() {
       windowsOverride = false;
       linuxOverride = true;
       final tested = WindowUtils(
-        macOs: () => _MockSystemWindow(),
-        win32: () => _MockSystemWindow(),
+        macOs: _MockSystemWindow.new,
+        win32: _MockSystemWindow.new,
         other: () => systemWindow,
       );
 

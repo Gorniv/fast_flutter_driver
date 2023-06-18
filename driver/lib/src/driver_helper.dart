@@ -10,9 +10,9 @@ import 'package:flutter/material.dart';
 
 Future<void> configureTest(BaseConfiguration config) async {
   await WindowUtils(
-    macOs: () => MacOsWindow(),
-    win32: () => Win32Window(),
-    other: () => UnsupportedWindow(),
+    macOs: MacOsWindow.new,
+    win32: Win32Window.new,
+    other: UnsupportedWindow.new,
   ).setSize(
     Size(config.resolution.width, config.resolution.height),
   );

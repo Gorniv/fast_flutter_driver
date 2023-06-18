@@ -1,5 +1,4 @@
 import 'package:fast_flutter_driver/src/window_utils/window_utils.dart';
-import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
 
 class MacOsWindow implements SystemWindow {
