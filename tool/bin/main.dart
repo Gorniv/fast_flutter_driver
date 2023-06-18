@@ -19,23 +19,29 @@ import 'package:http/http.dart' as http;
 
 Future<void> main(List<String> paths) async {
   exitCode = 2;
-  await run(
-    paths,
-    loggerFactory: (verbose) => verbose ? Logger.verbose() : Logger.standard(),
-    versionCheckerFactory: (logger) => VersionChecker(
-      pathProvider: PathProvider(),
-      httpGet: (url) => http.get(Uri.parse(url)),
-    ),
-    testExecutorFactory: (logger) => TestExecutor(
-      outputFactory: output,
-      inputFactory: input,
-      run: command_line.run,
-      logger: logger,
-    ),
-    testFileProviderFactory: (logger) => TestFileProvider(
-      logger: logger,
-    ),
-  );
+  try {
+    await run(
+      paths,
+      loggerFactory: (verbose) =>
+          verbose ? Logger.verbose() : Logger.standard(),
+      versionCheckerFactory: (logger) => VersionChecker(
+        pathProvider: PathProvider(),
+        httpGet: (url) => http.get(Uri.parse(url)),
+      ),
+      testExecutorFactory: (logger) => TestExecutor(
+        outputFactory: output,
+        inputFactory: input,
+        run: command_line.run,
+        logger: logger,
+      ),
+      testFileProviderFactory: (logger) => TestFileProvider(
+        logger: logger,
+      ),
+    );
+  } catch (e, stackTrace) {
+    stderr.writeln(e);
+    stderr.writeln(stackTrace);
+  }
 }
 
 Future<void> run(

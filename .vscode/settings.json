@@ -4,6 +4,7 @@
         "fastdriver",
         "interps",
         "ints",
-        "todos"
+        "todos",
+        "writeln"
     ]
 }
