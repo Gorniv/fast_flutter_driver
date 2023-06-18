@@ -77,6 +77,7 @@ class TestExecutor {
     {
       logger.stdout('Testing $testFile');
       final mainFile = _mainDartFile(testFile);
+      logger.stdout('mainFile $mainFile');
       final input = inputFactory();
       final url = await _buildAndRun(
         Commands().flutter.run(
@@ -92,6 +93,7 @@ class TestExecutor {
         parameters.device,
       );
       final platform = parameters.platform;
+      logger.stdout('runTestCommand');
       final runTestCommand = Commands().flutter.dart(
         testFile,
         dartArguments: parameters.dartArguments,
@@ -132,31 +134,33 @@ class TestExecutor {
     Logger logger,
     String device,
   ) {
+    logger.stdout('_buildAndRun');
     final completer = Completer<String>();
     final buildProgress = logger.progress('Building application for $device');
     Progress? syncingProgress;
 
     final output = outputFactory((String line) async {
-      logger.trace(line);
+      logger.stdout('line: $line');
       if (line.contains('Syncing files to')) {
         buildProgress.finish(showTiming: true);
         syncingProgress = logger.progress('Syncing files');
       }
       final nativeMatch = RegExp(
-              'An Observatory debugger and profiler on .* is available at: (http://.*/)')
+              'The Flutter DevTools debugger and profiler on .* is available at: (http://.*/)')
           .firstMatch(line);
       final webMatch =
           RegExp('service listening on (ws://.*)').firstMatch(line);
       final match = nativeMatch ?? webMatch;
       if (match != null) {
         syncingProgress?.finish(showTiming: true);
-        final url = match.group(1);
+        String? url = match.group(1);
         logger.trace('Observatory url: $url');
+        url = url?.split('?uri=').last;
         completer.complete(url);
       }
     });
 
-    logger.trace('Running $command');
+    logger.stdout('Running $command');
     run(command, output, stdin: input).then((_) {
       output.dispose();
       // ignore: return_of_invalid_type_from_catch_error

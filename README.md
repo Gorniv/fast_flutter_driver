@@ -4,10 +4,10 @@
 
 
 
-| Plugin | Pub |
-|--------|-----|
+| Plugin                                 | Pub                                                                                                    |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | [Command Line Tool][command_line_tool] | [![pub package](https://img.shields.io/pub/v/fast_flutter_driver_tool.svg)][command_line_tool_package] |
-| [UI Helper][ui_driver]| [![pub package](https://img.shields.io/pub/v/fast_flutter_driver.svg)][ui_driver_package] |
+| [UI Helper][ui_driver]                 | [![pub package](https://img.shields.io/pub/v/fast_flutter_driver.svg)][ui_driver_package]              |
 
 ## Deprecation Warning
 Flutter Driver tests are being deprecated in favor of new Integration Tests.
@@ -43,7 +43,10 @@ You can build and execute [the example][example] that works on any desktop syste
 - Add `dev_dependency` to your `pubspec.yaml`
 ```yaml
 dev_dependencies:
-  fast_flutter_driver: ^2.0.0
+  fast_flutter_driver: #^3.0.0
+      git:
+        url: https://github.com/Gorniv/fast_flutter_driver
+        path: driver
 ```
 
 - Create configuration class `test_driver/generic/test_configuration.dart`
@@ -153,7 +156,11 @@ void main(List<String> args) {
 ```
 - Install [fast_flutter_driver][command_line_tool] script:
 ```shell script
-pub global activate fast_flutter_driver_tool
+# pub global activate fast_flutter_driver_tool
+pub global activate --source git https://github.com/Gorniv/fast_flutter_driver --git-path tool
+
+## local:
+pub global activate --source path /Users/gorniv/github/tomaszpolanski/fast_flutter_driver/tool
 ```
 - Run:
 ```shell script

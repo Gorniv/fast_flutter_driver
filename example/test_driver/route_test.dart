@@ -14,7 +14,12 @@ void main(List<String> args) {
   final properties = TestProperties(args);
 
   setUpAll(() async {
-    driver = await FlutterDriver.connect(dartVmServiceUrl: properties.vmUrl);
+    print('setUpAll start ${properties.vmUrl}');
+    final url = properties.vmUrl.split('?uri=').last;
+    print('url ${url}');
+    driver = await FlutterDriver.connect(dartVmServiceUrl: url);
+    await driver.waitUntilFirstFrameRasterized();
+    print('setUpAll finish');
   });
 
   tearDownAll(() async {
@@ -22,6 +27,7 @@ void main(List<String> args) {
   });
 
   Future<void> restart(String route) {
+    print('route: restart ${route}');
     return driver.requestData(
       json.encode(
         TestConfiguration(

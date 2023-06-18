@@ -26,3 +26,5 @@ dependency_overrides:
   args: ^2.0.0
   fast_flutter_driver:
     path: ../driver
+  fast_flutter_driver_tool:
+    path: ../tool

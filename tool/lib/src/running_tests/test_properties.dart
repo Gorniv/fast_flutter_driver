@@ -38,7 +38,7 @@ class TestProperties {
   /// Additional parameters passed via --test-args from fastdriver.
   /// This is used to extend the capabilities of your tests without the need
   /// of modifying fastdriver's code.
-  String get additionalArgs => arguments[testArg];
+  String? get additionalArgs => arguments[testArg];
 }
 
 /// Base configuration that will be passed from tests to the application

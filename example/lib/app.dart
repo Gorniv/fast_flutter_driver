@@ -13,6 +13,13 @@ class ExampleApp extends StatelessWidget {
 
   final String? route;
 
+  static Map<String, Widget Function(BuildContext)> routesApp = {
+    routes.page1: (_) => const Page1(),
+    routes.page2: (_) => const Page2(),
+    routes.page3: (_) => const Page3(),
+    routes.page4: (_) => const Page4(),
+  };
+
   @override
   Widget build(BuildContext context) {
     final r = route ?? routes.page1;
@@ -31,12 +38,7 @@ class ExampleApp extends StatelessWidget {
           ),
         );
       },
-      routes: {
-        routes.page1: (_) => const Page1(),
-        routes.page2: (_) => const Page2(),
-        routes.page3: (_) => const Page3(),
-        routes.page4: (_) => const Page4(),
-      },
+      routes: routesApp,
     );
   }
 }

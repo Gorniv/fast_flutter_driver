@@ -30,6 +30,7 @@ void main(List<String> args) {
   /// It does not have to be implemented per file. Move it to a separate file
   /// and reuse it.
   Future<void> restart(String route) {
+    print('simple: restart ${route}');
     return driver.requestData(
       json.encode(
         TestConfiguration(
@@ -56,15 +57,13 @@ void main(List<String> args) {
   });
 
   group('using setup to restart every test', () {
-    setUp(() async {
-      await restart(routes.page1);
-    });
-
     test('- checking text', () async {
+      await restart(routes.page1);
       await driver.waitFor(find.text('/page1'));
     });
 
     test('- checking type', () async {
+      await restart(routes.page1);
       await driver.waitFor(find.byType('Page1'));
     });
   });
