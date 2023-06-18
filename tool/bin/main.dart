@@ -53,8 +53,6 @@ Future<void> run(
 }) async {
   final logger = LazyLogger(loggerFactory);
   final parser = scriptParameters;
-  logger.stdout('Fast Flutter Driver Tool');
-  logger.stdout('path: $paths');
   final result = _createArguments(() => parser.parse(paths), logger);
   if (result == null) {
     return;
@@ -104,8 +102,6 @@ Future<void> run(
     testName ?? 'test_driver',
   );
 
-  logger.stdout('testFile: $testFile');
-  logger.stdout('result: $result');
   if (testFile != null) {
     await setUp(
       result,

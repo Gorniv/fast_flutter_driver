@@ -77,7 +77,6 @@ class TestExecutor {
     {
       logger.stdout('Testing $testFile');
       final mainFile = _mainDartFile(testFile);
-      logger.stdout('mainFile $mainFile');
       final input = inputFactory();
       final url = await _buildAndRun(
         Commands().flutter.run(
@@ -93,7 +92,6 @@ class TestExecutor {
         parameters.device,
       );
       final platform = parameters.platform;
-      logger.stdout('runTestCommand');
       final runTestCommand = Commands().flutter.dart(
         testFile,
         dartArguments: parameters.dartArguments,
@@ -134,13 +132,11 @@ class TestExecutor {
     Logger logger,
     String device,
   ) {
-    logger.stdout('_buildAndRun');
     final completer = Completer<String>();
     final buildProgress = logger.progress('Building application for $device');
     Progress? syncingProgress;
 
     final output = outputFactory((String line) async {
-      logger.stdout('line: $line');
       if (line.contains('Syncing files to')) {
         buildProgress.finish(showTiming: true);
         syncingProgress = logger.progress('Syncing files');
