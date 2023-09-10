@@ -16,7 +16,11 @@ dependencies:
       url: https://github.com/Gorniv/fast_flutter_driver
       path: tool
 
-  bitsdojo_window: ^0.1.5
+  bitsdojo_window: 
+    git:
+      url: https://github.com/Gorniv/bitsdojo_window
+      path: bitsdojo_window
+      ref: e0719a45454c5e69a8cd9534a385627b2ec0d448
 
 dev_dependencies:
   flutter_test:
