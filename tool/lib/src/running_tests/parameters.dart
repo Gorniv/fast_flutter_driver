@@ -39,7 +39,6 @@ ArgParser testParameters = ArgParser()
 /// UI platform for the application
 enum TestPlatform {
   android,
-  macOS,
   iOS,
 }
 
@@ -57,8 +56,6 @@ abstract class TestPlatformEx {
     switch (value?.toLowerCase()) {
       case 'android':
         return TestPlatform.android;
-      case 'macos':
-        return TestPlatform.macOS;
       case 'ios':
         return TestPlatform.iOS;
       default:

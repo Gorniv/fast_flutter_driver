@@ -32,8 +32,6 @@ extension TestFlutterEx on TestPlatform {
         return TargetPlatform.android;
       case TestPlatform.iOS:
         return TargetPlatform.iOS;
-      case TestPlatform.macOS:
-        return TargetPlatform.macOS;
     }
   }
 }
