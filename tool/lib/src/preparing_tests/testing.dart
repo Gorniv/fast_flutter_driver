@@ -147,6 +147,7 @@ class TestExecutor {
       final webMatch =
           RegExp('service listening on (ws://.*)').firstMatch(line);
       final match = nativeMatch ?? webMatch;
+      // logger.trace('match: $match');
       if (match != null) {
         syncingProgress?.finish(showTiming: true);
         String? url = match.group(1);

@@ -21,6 +21,7 @@ Future<void> main(List<String> args) async {
     },
   );
 
+  print('runApp');
   runApp(
     RestartWidget<TestConfiguration>(
         backgroundColor: Colors.red,

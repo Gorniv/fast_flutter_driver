@@ -160,7 +160,7 @@ void main(List<String> args) {
 pub global activate --source git https://github.com/Gorniv/fast_flutter_driver --git-path tool
 
 ## local:
-pub global activate --source path /Users/gorniv/github/tomaszpolanski/fast_flutter_driver/tool
+dart pub global activate --source path /Users/gorniv/github/tomaszpolanski/fast_flutter_driver/tool
 ```
 - Run:
 ```shell script

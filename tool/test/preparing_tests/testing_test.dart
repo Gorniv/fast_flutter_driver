@@ -249,8 +249,8 @@ void main() {
                 'flutter run -d ${devices.device} --target=generic.dart')) {
               stdout.stream.add(
                 utf8.encode(
-                  ' An Observatory debugger and profiler '
-                  'on Windows is available at: $url',
+                  ' The Flutter DevTools debugger and profiler '
+                  'on macos is available at: $url',
                 ),
               );
             }
@@ -339,7 +339,7 @@ void main() {
               'flutter run -d ${devices.device} --target=generic.dart')) {
             stdout.stream.add(
               utf8.encode(
-                'An Observatory debugger and profiler '
+                'The Flutter DevTools debugger and profiler '
                 'on Windows is available at: http://127.0.0.1:50512/CKxutzePXlo/',
               ),
             );
@@ -386,7 +386,7 @@ void main() {
               'flutter run -d ${devices.device} --target=generic.dart')) {
             stdout.stream.add(
               utf8.encode(
-                'An Observatory debugger and profiler '
+                'The Flutter DevTools debugger and profiler '
                 'on Windows is available at: http://127.0.0.1:50512/CKxutzePXlo/',
               ),
             );
