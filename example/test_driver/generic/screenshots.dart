@@ -44,8 +44,13 @@ class Screenshot {
       Directory(_dir).create(recursive: true);
 
   Future<List<int>> _fastScreenshot(FlutterDriver driver) async {
-    await Future<void>.delayed(const Duration(milliseconds: 200));
+    await Future<void>.delayed(const Duration(milliseconds: 2000));
     final result = await driver.serviceClient.callMethod('_flutter.screenshot');
     return const Base64Codec().decode(result.json!['screenshot']);
   }
+
+  // Future<List<int>> _fastScreenshot(FlutterDriver driver) async {
+  //   final screenshot = await driver.screenshot();
+  //   return screenshot;
+  // }
 }

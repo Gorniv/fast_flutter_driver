@@ -12,6 +12,7 @@ void main() {
               device,
               flavor: null,
               additionalArguments: null,
+              fvm: null,
             );
         expect(tested, contains('-d $device'));
       });
@@ -23,8 +24,20 @@ void main() {
               'some_device',
               flavor: flavor,
               additionalArguments: null,
+              fvm: null,
             );
         expect(tested, contains('--flavor $flavor'));
+      });
+
+      test('passes fvm if available', () {
+        final tested = Commands().flutter.run(
+              testFile,
+              'some_device',
+              flavor: null,
+              additionalArguments: null,
+              fvm: true,
+            );
+        expect(tested, startsWith('fvm'));
       });
 
       test('passes additional arguments if available', () {
@@ -34,6 +47,7 @@ void main() {
               'some_device',
               flavor: null,
               additionalArguments: arguments,
+              fvm: null,
             );
         expect(tested, contains(arguments));
       });

@@ -10,9 +10,10 @@ class FlutterCommand {
     String device, {
     required String? flavor,
     required String? additionalArguments,
+    required bool? fvm,
   }) {
     // ignore: missing_whitespace_between_adjacent_strings
-    return 'flutter run -d $device --target=$target'
+    return '${(fvm ?? false) ? 'fvm ' : ''}flutter run -d $device --target=$target'
         '${flavor != null ? ' --flavor $flavor' : ''}'
         '${additionalArguments != null ? ' $additionalArguments' : ''}';
   }

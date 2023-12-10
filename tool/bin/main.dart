@@ -109,6 +109,7 @@ Future<void> run(
         testFile,
         parameters: ExecutorParameters(
           withScreenshots: result[screenshotsArg],
+          fvm: result[fvmArg],
           language: result[languageArg],
           resolution: result[resolutionArg],
           platform: TestPlatformEx.fromString(result[platformArg]),

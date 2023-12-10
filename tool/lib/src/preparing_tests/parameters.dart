@@ -8,6 +8,7 @@ import 'package:fast_flutter_driver_tool/src/utils/enum.dart';
 
 const languageArg = 'language';
 const screenshotsArg = 'screenshots';
+const fvmArg = 'fvm';
 const resolutionArg = 'resolution';
 const helpArg = 'help';
 const url = 'url';

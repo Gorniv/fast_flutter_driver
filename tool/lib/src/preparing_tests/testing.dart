@@ -36,6 +36,7 @@ Future<void> setUp(
 class ExecutorParameters {
   const ExecutorParameters({
     required this.withScreenshots,
+    required this.fvm,
     required this.resolution,
     required this.language,
     required this.device,
@@ -52,6 +53,7 @@ class ExecutorParameters {
   final String device;
   final TestPlatform? platform;
   final String? flavor;
+  final bool? fvm;
   final String? flutterArguments;
   final String? dartArguments;
   final String? testArguments;
@@ -83,6 +85,7 @@ class TestExecutor {
               mainFile,
               parameters.device,
               flavor: parameters.flavor,
+              fvm: parameters.fvm,
               additionalArguments: parameters.flutterArguments,
             ),
         input,

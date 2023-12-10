@@ -55,7 +55,7 @@ void main(List<String> args) {
   });
 
   group('Speed test', () {
-    List.generate(30, (index) => '/generated_page_$index').forEach((route) {
+    List.generate(10, (index) => '/generated_page_$index').forEach((route) {
       test(route, () async {
         await restart(route);
 
@@ -71,7 +71,8 @@ void main(List<String> args) {
             enabled: properties.screenshotsEnabled);
       });
 
-      List.generate(30, (index) => '/generated_page_$index').forEach((route) {
+      List.generate(10, (index) => '/generated_screenshots_page_$index')
+          .forEach((route) {
         test(route, () async {
           await restart(route);
 

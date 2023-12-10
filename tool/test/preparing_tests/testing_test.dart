@@ -138,6 +138,7 @@ void main() {
           dartArguments: '',
           flutterArguments: '',
           testArguments: '',
+          fvm: false,
         ),
       );
 
@@ -180,6 +181,7 @@ void main() {
           flutterArguments: arguments,
           dartArguments: '',
           testArguments: '',
+          fvm: false,
         ),
       );
 
@@ -222,6 +224,7 @@ void main() {
           dartArguments: '',
           flutterArguments: '',
           testArguments: '',
+          fvm: false,
         ),
       );
 
@@ -268,6 +271,7 @@ void main() {
             dartArguments: '',
             flutterArguments: '',
             testArguments: '',
+            fvm: false,
           ),
         );
 
@@ -311,6 +315,7 @@ void main() {
             dartArguments: '',
             flutterArguments: '',
             testArguments: '',
+            fvm: false,
           ),
         );
 
@@ -358,6 +363,7 @@ void main() {
           dartArguments: dartArgs,
           flutterArguments: '',
           testArguments: '',
+          fvm: false,
         ),
       );
 
@@ -405,6 +411,7 @@ void main() {
           testArguments: testArgs,
           dartArguments: '',
           flutterArguments: '',
+          fvm: false,
         ),
       );
 
