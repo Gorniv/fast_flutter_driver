@@ -20,6 +20,11 @@ ArgParser testParameters = ArgParser()
     abbr: screenshotsArg[0],
     help: 'Use screenshots',
   )
+  ..addFlag(
+    fvmArg,
+    abbr: fvmArg[0],
+    help: 'Use fvm',
+  )
   ..addOption(
     languageArg,
     abbr: languageArg[0],

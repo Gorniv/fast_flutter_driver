@@ -79,6 +79,11 @@ This is used to extend test functionality and this value will be passed as `Test
     help: 'Enables screenshots during test run',
   )
   ..addFlag(
+    fvmArg,
+    abbr: fvmArg[0],
+    help: 'Enables fvm during test run',
+  )
+  ..addFlag(
     helpArg,
     abbr: helpArg[0],
     help: 'Display this help message',

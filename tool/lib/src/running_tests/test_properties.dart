@@ -19,6 +19,10 @@ class TestProperties {
   /// for making screenshot when this flag is passed
   bool get screenshotsEnabled => arguments[screenshotsArg] ?? false;
 
+  /// Flag passed via command line (with --fvm) if the tests should
+  /// use fvm for run.
+  bool get fvmEnabled => arguments[fvmArg] ?? false;
+
   /// Current locale/locale passed from fastdriver via --language.
   /// This property can be used in tests to set appropriate application language
   String get locale => arguments[languageArg];

@@ -53,7 +53,7 @@ class ExecutorParameters {
   final String device;
   final TestPlatform? platform;
   final String? flavor;
-  final bool? fvm;
+  final bool fvm;
   final String? flutterArguments;
   final String? dartArguments;
   final String? testArguments;
@@ -101,6 +101,7 @@ class TestExecutor {
         testArguments: {
           '-u': url,
           if (parameters.withScreenshots) '-${screenshotsArg[0]}': '',
+          if (parameters.fvm) '-${fvmArg[0]}': '',
           '-${resolutionArg[0]}': parameters.resolution,
           '-${languageArg[0]}': parameters.language,
           if (platform != null) '-${platformArg[0]}': fromEnum(platform),

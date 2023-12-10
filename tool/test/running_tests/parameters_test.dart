@@ -10,6 +10,7 @@ void main() {
       platformArg,
       languageArg,
       screenshotsArg,
+      fvmArg,
       // ignore: avoid_function_literals_in_foreach_calls
     ].forEach((option) {
       test(option, () {
