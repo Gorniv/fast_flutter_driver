@@ -13,13 +13,13 @@ class FlutterCommand {
     required bool? fvm,
   }) {
     // ignore: missing_whitespace_between_adjacent_strings
-    return '${(fvm ?? false) ? 'fvm ' : ''}flutter run -d $device --target=$target'
+    return '${(fvm ?? false) ? 'fvm ' : ''}flutter run -d "$device" --target=$target'
         '${flavor != null ? ' --flavor $flavor' : ''}'
         '${additionalArguments != null ? ' $additionalArguments' : ''}';
   }
 
   String attach(String debugUri, String device) =>
-      'flutter attach -d $device --debug-uri $debugUri';
+      'flutter attach -d "$device" --debug-uri $debugUri';
 
   String dart(
     String file, {

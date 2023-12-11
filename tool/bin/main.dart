@@ -81,7 +81,8 @@ Future<void> run(
               '${green('New version')} (${bold(version.remote)}) available!')
           ..stdout(
             'To update, run '
-            "${green("'pub global activate fast_flutter_driver_tool'")}",
+            // "${green("'pub global activate fast_flutter_driver_tool'")}",
+            "${green("'pub global activate --source git https://github.com/Gorniv/fast_flutter_driver --git-path tool'")}",
           );
       }
     }

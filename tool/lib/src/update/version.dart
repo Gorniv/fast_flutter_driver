@@ -51,11 +51,11 @@ class VersionChecker {
 
   Future<String> remoteVersion() async {
     final response = await httpGet(
-      'https://pub.dev/packages/fast_flutter_driver_tool',
+      'https://github.com/Gorniv/fast_flutter_driver/blob/master/tool/pubspec.yaml',
     );
 
-    final match = RegExp(r'fast_flutter_driver_tool: \^(\d+\.\d+.\d+(\+\w)?)')
-        .firstMatch(response.body);
+    final match =
+        RegExp(r'version: \^(\d+\.\d+.\d+(\+\w)?)').firstMatch(response.body);
     final version = match?.group(1);
     if (version == null) {
       throw PackageNotFound();
